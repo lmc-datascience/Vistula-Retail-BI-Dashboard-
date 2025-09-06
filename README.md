@@ -50,7 +50,7 @@ The goal is to demonstrate expertise in data modeling, advanced DAX, and visual 
 ## 📂 Repository Structure
 - `Vistula_Retail_Demo.pdf` → Exported PDF of the report.  
 - `assets/preview_sales.png` → **Sales Performance** page preview.  
-- `assets/preview_returns.png` → **Returns & Quality** page preview.  
+- `assets/preview_executive.png` → **Executive** page preview.  
 
 ---
 
