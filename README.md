@@ -1,58 +1,59 @@
-# Vistula Retail BI Dashboard
+# Vistula Retail – Business Intelligence Dashboard (Demo)
 
-📊 Business Intelligence dashboard simulated for the **Polish retail market**, developed in **Power BI**.  
-The goal is to demonstrate expertise in data modeling, advanced DAX, and visual storytelling for executive reporting.
-
----
-
-## 🔎 Data Model
-- **fact_sales**: Sales (quantity, net/gross values, discounts, VAT).  
-- **fact_returns**: Returns and quality (quantity and value).  
-- **fact_payments**: Payments and methods (card, cash, PayPal, etc.).  
-- **dim_customer**: Customer master data.  
-- **dim_product**: Product catalog.  
-- **dim_channel**: Sales channels (Marketplace, E-commerce, Store, etc.).  
-- **dim_date**: Calendar (time intelligence).  
-- **dim_store**: Physical stores.  
-- **dim_geo**: Geographic regions / Polish Voivodeships.  
-- **dim_payment_method**: Payment methods.
+📊 **Overview**  
+This project simulates a fictitious Polish retail company called **Vistula Retail S.A.**, using synthetic sales, returns, and payments data.  
+The goal is to demonstrate skills in **Power BI, SQL, and DAX modeling** applied to a corporate reporting scenario.
 
 ---
 
-## 📈 Dashboard Pages
-
-### 1. **Sales Performance**
-- KPIs: Total Net Sales, Gross Sales, VAT, Discounts, Total Quantity.  
-- Column chart: Net Sales by category.  
-- Stacked columns: Net Sales by channel (colored by Gross Margin %).  
-- Table: Top 20 products (Quantity, Net Sales, Margin %).  
-- Line chart: Net Sales trend (Year-Month).  
-- Donuts: Net Sales share by region and channel.  
+## 🚀 Features
+- **Executive Overview**: Strategic KPIs (Net Sales, Gross Sales, VAT, Discounts, Quantities).  
+- **Sales Performance**: Category, channel, and product analysis with margin %.  
+- **Returns & Quality**: Return Rate (Qty & Value), channel and regional impact.  
 
 ---
 
-### 2. **Returns & Quality**
-- KPIs: Return Rate (Qty & Value), Total Returns Qty, Total Returns Value.  
-- Line chart: Returns evolution (Year-Month).  
-- Bar chart: Return Rate by channel.  
-- Bar chart: Return Rate by region.  
-- Detailed table: Returns by product.  
+## 🛠️ Tech Stack
+- **Power BI** (DAX, Power Query, tabular modeling)  
+- **SQL** for fact and dimension table simulation  
+- **Excel/CSV** for generating demo datasets  
 
 ---
 
-## 🎯 Technical Highlights
-- DAX measures created for Sales, Returns, VAT, Discounts, and Return Rates.  
-- Star Schema modeling connecting fact and dimension tables.  
-- Professional dark theme layout for clear visualization.  
+## 📂 Data Structure
+- **Fact tables**: `fact_sales`, `fact_returns`, `fact_payments`  
+- **Dimension tables**: `dim_date`, `dim_customer`, `dim_product`, `dim_channel`, `dim_store`, `dim_geo`, `dim_payment_method`  
 
 ---
 
-## 📂 Repository Structure
-- `Vistula_Retail_Demo.pdf` → Exported PDF of the report.  
-- `assets/preview_sales.png` → **Sales Performance** page preview.  
-- `assets/preview_executive.png` → **Executive** page preview.  
+## 🔗 Model relationships (keys)
+- `fact_sales[date_key]` → `dim_date[date_key]`  
+- `fact_sales[customer_id]` → `dim_customer[customer_id]`  
+- `fact_sales[product_id]` → `dim_product[product_id]`  
+- `fact_returns[sale_id]` → `fact_sales[sale_id]` *(return linkage)*  
+- `fact_payments[sale_id]` → `fact_sales[sale_id]`  
 
 ---
 
-## 🚀 Purpose
-This dashboard is part of an **international BI portfolio** designed for opportunities in Central Europe, with a focus on **Poland**.
+## 📸 Preview
+![Executive Overview](assets/preview_executive.png)  
+![Sales Performance](assets/preview_sales.png)  
+
+---
+
+## 🎯 Key Learnings
+- Built **return analysis metrics** with Return Rate % by channel/region.  
+- Applied **multi-fact modeling** (Sales, Returns, Payments).  
+- Designed a **dark corporate layout** with clear KPIs and storytelling.  
+
+---
+
+## 📥 File
+- [Download Dashboard PDF](./Vistula_Retail_Demo.pdf)
+
+---
+
+## 👨‍💻 Author
+**Leonardo Cabral** – Data Analyst | Power BI | SQL | SAP | Power Platform  
+Certification in progress: **Microsoft PL-300**
+
